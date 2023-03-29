@@ -32,7 +32,7 @@ const handler = async (req: Request): Promise<Response> => {
       size,
     });
 
-    return new Response(JSON.stringify(response), { status: 200 });
+    return new Response(JSON.stringify(response.data), { status: 200 });
   } catch (error) {
     console.error(error);
     return new Response('Error', { status: 500 });
