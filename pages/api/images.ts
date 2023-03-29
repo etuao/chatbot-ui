@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai';
+import fetchAdapter from '@vespaiach/axios-fetch-adapter';
 
 export const config = {
   runtime: 'edge',
@@ -20,6 +21,9 @@ const handler = async (req: Request): Promise<Response> => {
 
     const configuration = new Configuration({
       apiKey: key || process.env.OPENAI_API_KEY,
+      baseOptions: {
+        adapter: fetchAdapter,
+      },
     });
     const openai = new OpenAIApi(configuration);
     const response: any = await openai.createImage({
