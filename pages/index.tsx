@@ -30,6 +30,8 @@ import Head from 'next/head';
 import { useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+import { Copywriting } from '../modules/Copy-writing'
+
 interface HomeProps {
   serverSideApiKeyIsSet: boolean;
 }
@@ -607,128 +609,128 @@ const Home: React.FC<HomeProps> = ({ serverSideApiKeyIsSet }) => {
       });
     }
   }, [serverSideApiKeyIsSet]);
+  return (<Copywriting></Copywriting>)
+  // return (
+  //   <>
+  //     <Head>
+  //       <title>Chatbot UI</title>
+  //       <meta name="description" content="ChatGPT but better." />
+  //       <meta
+  //         name="viewport"
+  //         content="height=device-height ,width=device-width, initial-scale=1, user-scalable=no"
+  //       />
+  //       <link rel="icon" href="/favicon.ico" />
+  //     </Head>
+  //     {selectedConversation && (
+  //       <main
+  //         className={`flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
+  //       >
+  //         <div className="fixed top-0 w-full sm:hidden">
+  //           <Navbar
+  //             selectedConversation={selectedConversation}
+  //             onNewConversation={handleNewConversation}
+  //           />
+  //         </div>
 
-  return (
-    <>
-      <Head>
-        <title>Chatbot UI</title>
-        <meta name="description" content="ChatGPT but better." />
-        <meta
-          name="viewport"
-          content="height=device-height ,width=device-width, initial-scale=1, user-scalable=no"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {selectedConversation && (
-        <main
-          className={`flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
-        >
-          <div className="fixed top-0 w-full sm:hidden">
-            <Navbar
-              selectedConversation={selectedConversation}
-              onNewConversation={handleNewConversation}
-            />
-          </div>
+  //         <div className="flex h-full w-full pt-[48px] sm:pt-0">
+  //           {showSidebar ? (
+  //             <div>
+  //               <Chatbar
+  //                 loading={messageIsStreaming}
+  //                 conversations={conversations}
+  //                 lightMode={lightMode}
+  //                 selectedConversation={selectedConversation}
+  //                 apiKey={apiKey}
+  //                 folders={folders}
+  //                 onToggleLightMode={handleLightMode}
+  //                 onCreateFolder={(name) => handleCreateFolder(name, 'chat')}
+  //                 onDeleteFolder={handleDeleteFolder}
+  //                 onUpdateFolder={handleUpdateFolder}
+  //                 onNewConversation={handleNewConversation}
+  //                 onSelectConversation={handleSelectConversation}
+  //                 onDeleteConversation={handleDeleteConversation}
+  //                 onToggleSidebar={handleToggleChatbar}
+  //                 onUpdateConversation={handleUpdateConversation}
+  //                 onApiKeyChange={handleApiKeyChange}
+  //                 onClearConversations={handleClearConversations}
+  //                 onExportConversations={handleExportData}
+  //                 onImportConversations={handleImportConversations}
+  //               />
 
-          <div className="flex h-full w-full pt-[48px] sm:pt-0">
-            {showSidebar ? (
-              <div>
-                <Chatbar
-                  loading={messageIsStreaming}
-                  conversations={conversations}
-                  lightMode={lightMode}
-                  selectedConversation={selectedConversation}
-                  apiKey={apiKey}
-                  folders={folders}
-                  onToggleLightMode={handleLightMode}
-                  onCreateFolder={(name) => handleCreateFolder(name, 'chat')}
-                  onDeleteFolder={handleDeleteFolder}
-                  onUpdateFolder={handleUpdateFolder}
-                  onNewConversation={handleNewConversation}
-                  onSelectConversation={handleSelectConversation}
-                  onDeleteConversation={handleDeleteConversation}
-                  onToggleSidebar={handleToggleChatbar}
-                  onUpdateConversation={handleUpdateConversation}
-                  onApiKeyChange={handleApiKeyChange}
-                  onClearConversations={handleClearConversations}
-                  onExportConversations={handleExportData}
-                  onImportConversations={handleImportConversations}
-                />
+  //               <button
+  //                 className="fixed top-5 left-[270px] z-50 h-7 w-7 hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:left-[270px] sm:h-8 sm:w-8 sm:text-neutral-700"
+  //                 onClick={handleToggleChatbar}
+  //               >
+  //                 <IconArrowBarLeft />
+  //               </button>
+  //               <div
+  //                 onClick={handleToggleChatbar}
+  //                 className="absolute top-0 left-0 z-10 w-full h-full bg-black opacity-70 sm:hidden"
+  //               ></div>
+  //             </div>
+  //           ) : (
+  //             <button
+  //               className="fixed top-2.5 left-4 z-50 h-7 w-7 text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:left-4 sm:h-8 sm:w-8 sm:text-neutral-700"
+  //               onClick={handleToggleChatbar}
+  //             >
+  //               <IconArrowBarRight />
+  //             </button>
+  //           )}
 
-                <button
-                  className="fixed top-5 left-[270px] z-50 h-7 w-7 hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:left-[270px] sm:h-8 sm:w-8 sm:text-neutral-700"
-                  onClick={handleToggleChatbar}
-                >
-                  <IconArrowBarLeft />
-                </button>
-                <div
-                  onClick={handleToggleChatbar}
-                  className="absolute top-0 left-0 z-10 w-full h-full bg-black opacity-70 sm:hidden"
-                ></div>
-              </div>
-            ) : (
-              <button
-                className="fixed top-2.5 left-4 z-50 h-7 w-7 text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:left-4 sm:h-8 sm:w-8 sm:text-neutral-700"
-                onClick={handleToggleChatbar}
-              >
-                <IconArrowBarRight />
-              </button>
-            )}
+  //           <div className="flex flex-1">
+  //             <Chat
+  //               conversation={selectedConversation}
+  //               messageIsStreaming={messageIsStreaming}
+  //               apiKey={apiKey}
+  //               serverSideApiKeyIsSet={serverSideApiKeyIsSet}
+  //               modelError={modelError}
+  //               models={models}
+  //               loading={loading}
+  //               prompts={prompts}
+  //               onSend={handleSend}
+  //               onUpdateConversation={handleUpdateConversation}
+  //               onEditMessage={handleEditMessage}
+  //               stopConversationRef={stopConversationRef}
+  //             />
+  //           </div>
 
-            <div className="flex flex-1">
-              <Chat
-                conversation={selectedConversation}
-                messageIsStreaming={messageIsStreaming}
-                apiKey={apiKey}
-                serverSideApiKeyIsSet={serverSideApiKeyIsSet}
-                modelError={modelError}
-                models={models}
-                loading={loading}
-                prompts={prompts}
-                onSend={handleSend}
-                onUpdateConversation={handleUpdateConversation}
-                onEditMessage={handleEditMessage}
-                stopConversationRef={stopConversationRef}
-              />
-            </div>
-
-            {showPromptbar ? (
-              <div>
-                <Promptbar
-                  prompts={prompts}
-                  folders={folders}
-                  onToggleSidebar={handleTogglePromptbar}
-                  onCreatePrompt={handleCreatePrompt}
-                  onUpdatePrompt={handleUpdatePrompt}
-                  onDeletePrompt={handleDeletePrompt}
-                  onCreateFolder={(name) => handleCreateFolder(name, 'prompt')}
-                  onDeleteFolder={handleDeleteFolder}
-                  onUpdateFolder={handleUpdateFolder}
-                />
-                <button
-                  className="fixed top-5 right-[270px] z-50 h-7 w-7 hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:right-[270px] sm:h-8 sm:w-8 sm:text-neutral-700"
-                  onClick={handleTogglePromptbar}
-                >
-                  <IconArrowBarRight />
-                </button>
-                <div
-                  onClick={handleTogglePromptbar}
-                  className="absolute top-0 left-0 z-10 w-full h-full bg-black opacity-70 sm:hidden"
-                ></div>
-              </div>
-            ) : (
-              <button
-                className="fixed top-2.5 right-4 z-50 h-7 w-7 text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:right-4 sm:h-8 sm:w-8 sm:text-neutral-700"
-                onClick={handleTogglePromptbar}
-              >
-                <IconArrowBarLeft />
-              </button>
-            )}
-          </div>
-        </main>
-      )}
-    </>
-  );
+  //           {showPromptbar ? (
+  //             <div>
+  //               <Promptbar
+  //                 prompts={prompts}
+  //                 folders={folders}
+  //                 onToggleSidebar={handleTogglePromptbar}
+  //                 onCreatePrompt={handleCreatePrompt}
+  //                 onUpdatePrompt={handleUpdatePrompt}
+  //                 onDeletePrompt={handleDeletePrompt}
+  //                 onCreateFolder={(name) => handleCreateFolder(name, 'prompt')}
+  //                 onDeleteFolder={handleDeleteFolder}
+  //                 onUpdateFolder={handleUpdateFolder}
+  //               />
+  //               <button
+  //                 className="fixed top-5 right-[270px] z-50 h-7 w-7 hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:right-[270px] sm:h-8 sm:w-8 sm:text-neutral-700"
+  //                 onClick={handleTogglePromptbar}
+  //               >
+  //                 <IconArrowBarRight />
+  //               </button>
+  //               <div
+  //                 onClick={handleTogglePromptbar}
+  //                 className="absolute top-0 left-0 z-10 w-full h-full bg-black opacity-70 sm:hidden"
+  //               ></div>
+  //             </div>
+  //           ) : (
+  //             <button
+  //               className="fixed top-2.5 right-4 z-50 h-7 w-7 text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:right-4 sm:h-8 sm:w-8 sm:text-neutral-700"
+  //               onClick={handleTogglePromptbar}
+  //             >
+  //               <IconArrowBarLeft />
+  //             </button>
+  //           )}
+  //         </div>
+  //       </main>
+  //     )}
+  //   </>
+  // );
 };
 export default Home;
 
