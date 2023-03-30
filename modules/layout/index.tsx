@@ -46,10 +46,9 @@ const Layout: React.FC<ILayoutProps> = (props) => {
             <Menu
               theme="dark"
               mode="inline"
-              defaultSelectedKeys={['1']}
               items={[
                 {
-                  key: '/chat',
+                  key: '/ai-chat',
                   icon: <UserOutlined />,
                   label: 'AI 聊天',
                 },

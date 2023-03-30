@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import Layout from '@/modules/layout';
 
-const Chat = () => {
+const AiChat = () => {
   const router = useRouter();
 
   return (
@@ -11,4 +11,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default AiChat;
