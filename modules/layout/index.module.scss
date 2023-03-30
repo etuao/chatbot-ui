@@ -5,6 +5,21 @@
 }
 
 .layout {
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        height: 48px !important;
+        font-size: 18px;
+        font-weight: 700;
+        border-bottom: 1px solid #fff;
+        margin: 0 4px 8px 4px !important;
+        padding: 0;
+        background: transparent !important;
+        cursor: pointer;
+    }
+
     .trigger {
         padding: 0 24px;
         font-size: 18px;
