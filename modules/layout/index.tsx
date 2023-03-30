@@ -10,7 +10,7 @@ import { Layout, Menu } from 'antd';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 import { Copywriting } from '../Copy-writing/index';
-import Home from '../../pages/index_bak'
+import Home from '../../pages/chat';
 
 const { Header, Sider, Content } = Layout;
 const App: React.FC = () => {
