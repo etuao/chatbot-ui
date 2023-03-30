@@ -9,6 +9,8 @@ import {
 import { Layout, Menu } from 'antd';
 import classnames from 'classnames';
 import styles from './index.module.scss';
+import { Copywriting } from '../Copy-writing/index';
+import Home from '../../pages/index_bak'
 
 const { Header, Sider, Content } = Layout;
 const App: React.FC = () => {
@@ -26,7 +28,7 @@ const App: React.FC = () => {
             {
               key: '1',
               icon: <UserOutlined />,
-              label: 'nav 1',
+              label: '文案创作',
             },
             {
               key: '2',
@@ -58,7 +60,7 @@ const App: React.FC = () => {
             minHeight: 280,
           }}
         >
-          Content
+          <Copywriting />
         </Content>
       </Layout>
     </Layout>
