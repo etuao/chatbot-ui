@@ -28,7 +28,12 @@
   height: 6px;
 }
 
-html {
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
   background: #202123;
 }
 
@@ -40,4 +45,21 @@ html {
 
 pre:has(div.codeblock) {
   padding: 0;
+}
+
+#__next {
+  height: 100vh;
+
+}
+
+#__next>main {
+  height: 100vh;
+}
+
+#__next>main>main {
+  height: 100vh;
+}
+
+#__next>main>main>section {
+  height: 100vh;
 }
