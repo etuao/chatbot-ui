@@ -16,13 +16,14 @@
     "@ant-design/icons": "^5.0.1",
     "@dqbd/tiktoken": "^1.0.2",
     "@tabler/icons-react": "^2.9.0",
+    "@vespaiach/axios-fetch-adapter": "^0.3.1",
     "antd": "^5.3.3",
     "classnames": "^2.3.2",
-    "@vespaiach/axios-fetch-adapter": "^0.3.1",
     "eventsource-parser": "^0.1.0",
     "i18next": "^22.4.13",
     "next": "13.2.4",
     "next-i18next": "^13.2.2",
+    "nodemon": "^2.0.22",
     "openai": "^3.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -35,6 +36,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.3.1",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "18.15.0",
     "@types/react": "18.0.28",

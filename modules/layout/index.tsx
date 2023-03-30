@@ -11,6 +11,8 @@ import Head from 'next/head';
 import router from 'next/router';
 import { MenuClickEventHandler } from 'rc-menu/lib/interface';
 import styles from './index.module.scss';
+import { Copywriting } from '../Copy-writing/index';
+import Home from '../../pages/chat';
 
 const { Header, Sider, Content } = AntLayout;
 export interface ILayoutProps {
