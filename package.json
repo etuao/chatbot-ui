@@ -26,6 +26,7 @@
     "nodemon": "^2.0.22",
     "openai": "^3.2.1",
     "react": "18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "18.2.0",
     "react-i18next": "^12.2.0",
     "react-markdown": "^8.0.5",
@@ -33,11 +34,12 @@
     "rehype-mathjax": "^4.0.2",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
+    "styled-components": "^5.3.9",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@types/classnames": "^2.3.1",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/classnames": "^2.3.1",
     "@types/node": "18.15.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
