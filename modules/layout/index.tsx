@@ -3,6 +3,7 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
+  FileTextOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Layout as AntLayout, Menu } from 'antd';
@@ -51,9 +52,16 @@ const Layout: React.FC<ILayoutProps> = (props) => {
                   label: 'AI 聊天',
                 },
                 {
-                  key: '/copy-writing',
-                  icon: <VideoCameraOutlined />,
+                  key: '/text',
+                  icon: <FileTextOutlined />,
                   label: '文案创作',
+                  children: [{
+                    key: '/copy-writing?type=writing',
+                    label: '引流营销文案',
+                  },{
+                    key: '/copy-writing?type=employment',
+                    label: '招聘JD',
+                  }]
                 },
                 {
                   key: '/gen-article',
