@@ -1,0 +1,37 @@
+.genArticle {
+  width: 100%;
+  .formTop {
+    width: 720px;
+    height: 52px;
+    margin: 0 auto;
+    border-radius: 52px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    .textArea {
+      flex: 1;
+      max-height: 40px;
+      margin: 6px 20px;
+      overflow-y: auto;
+      display: flex;
+      align-items: center;
+      > div {
+        flex: 1;
+        outline: none;
+      }
+    }
+    .buttonSubmit {
+      width: 100px;
+      height: 46px;
+      font-weight: 500;
+      font-family: PingFangSC-Medium;
+      font-size: 15px;
+      line-height: 46px;
+      cursor: pointer;
+      text-align: center;
+      background: #fff linear-gradient(90deg, #7d42ff, #4961f3);
+      border-radius: 23px;
+      color: #fff;
+    }
+  }
+}

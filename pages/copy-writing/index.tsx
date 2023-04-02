@@ -41,7 +41,7 @@ const Content = (props: { content: string }) => {
         }}
         text={props.content}
       >
-        <Button>复制文案</Button>
+      <Button>复制文案</Button>
       </CopyToClipboard>
     </div>
   );

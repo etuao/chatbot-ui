@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Input, InputNumber, Select } from 'antd';
 import { Loading } from '../../components/Loading/index';
-import { handleSend } from '../request';
+import { handleSend } from '../../request';
 import styles from '../index.module.scss';
 type PropsForm = {
   callback: Function;
