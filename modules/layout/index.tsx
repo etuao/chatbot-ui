@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
+import { Layout as AntLayout, Menu } from 'antd';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
-import { Layout as AntLayout, Menu } from 'antd';
 import classnames from 'classnames';
 import Head from 'next/head';
 import router from 'next/router';
 import { MenuClickEventHandler } from 'rc-menu/lib/interface';
-import styles from './index.module.scss';
 import { Copywriting } from '../Copy-writing/index';
 import Home from '../../pages/chat';
+import 'antd/dist/reset.css';
+import styles from './index.module.scss';
 
 const { Header, Sider, Content } = AntLayout;
 export interface ILayoutProps {
@@ -61,8 +62,8 @@ const Layout: React.FC<ILayoutProps> = (props) => {
               onClick={handleOnClick}
             />
           </Sider>
-          <AntLayout className="site-layout">
-            <Header className={styles.common}>
+          <AntLayout>
+            <Header className={styles.header}>
               {React.createElement(
                 collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
                 {
@@ -71,15 +72,7 @@ const Layout: React.FC<ILayoutProps> = (props) => {
                 },
               )}
             </Header>
-            <Content
-              style={{
-                margin: '24px 16px',
-                padding: 24,
-                minHeight: 280,
-              }}
-            >
-              {props.children}
-            </Content>
+            <Content className={styles.content}>{props.children}</Content>
           </AntLayout>
         </AntLayout>
       </main>

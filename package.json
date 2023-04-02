@@ -21,6 +21,7 @@
     "classnames": "^2.3.2",
     "eventsource-parser": "^0.1.0",
     "i18next": "^22.4.13",
+    "lodash": "^4.17.21",
     "next": "13.2.4",
     "next-i18next": "^13.2.2",
     "nodemon": "^2.0.22",
@@ -36,8 +37,9 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@types/classnames": "^2.3.1",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/classnames": "^2.3.1",
+    "@types/lodash": "^4.14.192",
     "@types/node": "18.15.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
