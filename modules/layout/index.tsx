@@ -45,15 +45,17 @@ const Layout: React.FC<ILayoutProps> = (props) => {
             <Menu
               theme="dark"
               mode="inline"
-              selectedKeys={selectedMenuKey ? [selectedMenuKey] : []}
+              selectedKeys={
+                selectedMenuKey ? [selectedMenuKey.replace('/', '')] : []
+              }
               items={[
                 {
-                  key: '/ai-chat',
+                  key: 'ai-chat',
                   icon: <UserOutlined />,
                   label: 'AI 聊天',
                 },
                 {
-                  key: '/text',
+                  key: 'text',
                   icon: <FileTextOutlined />,
                   label: '文案创作',
                   children: [
@@ -68,7 +70,7 @@ const Layout: React.FC<ILayoutProps> = (props) => {
                   ],
                 },
                 {
-                  key: '/gen-article',
+                  key: 'gen-article',
                   icon: <VideoCameraOutlined />,
                   label: 'AI 图文',
                 },
