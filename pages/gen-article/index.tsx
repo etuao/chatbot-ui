@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Layout from '@/modules/layout';
 import React, { useState } from 'react';
 import { Button, Form, Input, InputNumber, Select } from 'antd';
-import { Loading } from '../components/Loading/index';
+import Loading from '../../components/Loading';
 import styles from './index.module.scss';
 
 const GenArticle = () => {
