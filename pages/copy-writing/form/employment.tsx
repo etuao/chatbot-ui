@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Form, Input, InputNumber, Select } from 'antd';
-import { Loading } from '../../components/Loading/index';
-import { handleSend } from '../../request';
+import Loading from '../../../components/Loading';
+import { handleSend } from '../../../request';
 import styles from '../index.module.scss';
 type PropsForm = {
   callback: Function;
 };
-export const FormEmployment = (props: PropsForm) => {
+const FormEmployment = (props: PropsForm) => {
   const [isLoading, setIsLoading] = useState(false);
   const onFinish = async (e: any) => {
     setIsLoading(true);
@@ -62,3 +62,5 @@ export const FormEmployment = (props: PropsForm) => {
     </div>
   );
 };
+
+export default FormEmployment;

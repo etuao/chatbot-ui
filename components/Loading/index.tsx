@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ImageSrc from "../../assets/image/loading.gif"
+
 const Popup = styled.div`
   width: 100vw;
   height: 100vh;
@@ -23,16 +23,19 @@ const LoadingImg = styled.div`
   overflow: hidden;
   font-weight: 600;
 `;
-export const Loading = () => {
+const Loading = () => {
   return (
     <Popup>
       <LoadingImg>
         <img
           style={{ width: '100%' }}
-          src={ImageSrc.src}
+          src={'./assets/image/loading.gif'}
+          alt=""
         />
         <p>正在加载中...</p>
       </LoadingImg>
     </Popup>
   );
 };
+
+export default Loading;

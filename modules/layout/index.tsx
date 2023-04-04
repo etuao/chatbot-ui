@@ -21,12 +21,10 @@ export interface ILayoutProps {
 }
 const Layout: React.FC<ILayoutProps> = (props) => {
   const [collapsed, setCollapsed] = useState(false);
-  const [menuKey, setMenuKey] = useState('');
   const handleOnClick: MenuClickEventHandler = (e) => {
-    setMenuKey(e.key);
     router.push(e.key);
   };
-
+  const selectedMenuKey = router.router?.pathname;
   return (
     <>
       <Head>
@@ -47,6 +45,7 @@ const Layout: React.FC<ILayoutProps> = (props) => {
             <Menu
               theme="dark"
               mode="inline"
+              selectedKeys={selectedMenuKey ? [selectedMenuKey] : []}
               items={[
                 {
                   key: '/ai-chat',
@@ -57,13 +56,16 @@ const Layout: React.FC<ILayoutProps> = (props) => {
                   key: '/text',
                   icon: <FileTextOutlined />,
                   label: '文案创作',
-                  children: [{
-                    key: '/copy-writing?type=writing',
-                    label: '引流营销文案',
-                  },{
-                    key: '/copy-writing?type=employment',
-                    label: '招聘JD',
-                  }]
+                  children: [
+                    {
+                      key: '/copy-writing?type=writing',
+                      label: '引流营销文案',
+                    },
+                    {
+                      key: '/copy-writing?type=employment',
+                      label: '招聘JD',
+                    },
+                  ],
                 },
                 {
                   key: '/gen-article',

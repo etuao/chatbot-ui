@@ -4,8 +4,8 @@ import Layout from '@/modules/layout';
 import styles from './index.module.scss';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useRouter } from 'next/router';
-import { FormContent } from './form/writing';
-import { FormEmployment } from './form/employment';
+import FormContent from './form/writing';
+import FormEmployment from './form/employment';
 // writing
 type PropsForm = {
   callback: Function;
@@ -33,7 +33,7 @@ const Content = (props: { content: string }) => {
         }}
       ></div>
       <CopyToClipboard
-        className="copy-text"
+        // className="copy-text"
         onCopy={(_: any, result: Boolean) => {
           result
             ? message.success('复制成功')
@@ -41,7 +41,7 @@ const Content = (props: { content: string }) => {
         }}
         text={props.content}
       >
-      <Button>复制文案</Button>
+        <Button>复制文案</Button>
       </CopyToClipboard>
     </div>
   );
